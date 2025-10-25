@@ -7,13 +7,13 @@ function Dashboard() {
 
   const handleLogout = () => {
     removeToken();
-    navigate("/");
+    navigate("/auth/login");
   };
 
   return (
     <div className="mt-16">
       <h1>Welcome to Dashboard!</h1>
-      <button onClick={handleLogout}>Logout</button>
+      <button className={`bg-blue-600 text-white py-3 px-5 rounded-lg transition hover:bg-blue-700 `} onClick={handleLogout}>Logout</button>
     </div>
   );
 }

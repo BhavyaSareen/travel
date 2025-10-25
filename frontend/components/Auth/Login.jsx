@@ -21,9 +21,9 @@ const Login = () => {
       });
 
       const data = await response.json();
-console.log(data);
+      console.log(data);
       if (response.ok) {
-          // ✅ Extract Supabase token
+        // ✅ Extract Supabase token
         const token = data.data.session.access_token;
         setToken(token);   // Save token to localStorage
         navigate("/dashboard");  // Redirect to dashboard
