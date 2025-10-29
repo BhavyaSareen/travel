@@ -9,6 +9,7 @@ import Signup from '../components/Auth/Signup'
 import ForgotPassword from '../components/Auth/ForgotPassword'
 import Dashboard from '../Pages/Dashboard';
 import ProtectedRoute from '../routes/ProtectedRoute';
+import Home from '../Pages/Home';
 
 function App() {
 
@@ -18,8 +19,9 @@ function App() {
   return (
     <>
       {!hideLayout && <Navbar />}
-
+      
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/auth" element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />

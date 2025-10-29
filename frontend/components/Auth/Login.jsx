@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { setToken } from "../../utils/auth"; // ✅ import token helper
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -14,7 +16,7 @@ const Login = () => {
 
     try {
       // Example API call — replace with your real backend endpoint
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch(`${BASE_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
